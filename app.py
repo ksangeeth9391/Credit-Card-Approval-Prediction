@@ -85,8 +85,11 @@ def predict():
 
         return render_template("result.html", prediction=result)
 
-    except Exception as e:
-        return str(e)
+    import traceback
+
+except Exception as e:
+    return "<pre>" + traceback.format_exc() + "</pre>"
+
 
 
 if __name__ == "__main__":
